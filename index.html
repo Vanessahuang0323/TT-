@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalenTag - AI驅動的實習配對平台</title>
+    <meta name="description" content="TalenTag幫助學生展示他們的技能並找到理想的實習機會。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': '#32ADE6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-float-delay-1 {
+            animation: float 3s ease-in-out 1s infinite;
+        }
+        .animate-float-delay-2 {
+            animation: float 3s ease-in-out 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- 導航欄 -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-brand" viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M256 32L448 144V368L256 480L64 368V144L256 32Z"/>
+                        <path d="M192 280L256 344L384 216" stroke="white" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-gray-800">TalenTag</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-brand transition-colors">首頁</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-brand transition-colors">運作方式</a>
+                    <a href="#demo" class="text-gray-600 hover:text-brand transition-colors">演示</a>
+                    <a href="#join-beta" class="bg-brand text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-colors">加入測試</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主視覺區域 -->
+    <section class="bg-brand pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h1 class="text-5xl font-bold mb-6">釋放你的潛力</h1>
+                <p class="text-xl mb-8">幫助學生展示專業技能，尋找理想實習機會</p>
+                <a href="loading.html" class="inline-block bg-white text-brand px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    分析我的履歷
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 個人檔案預覽 -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <!-- 浮動檔案卡片 -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="animate-float absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+                    <div class="bg-white p-4 rounded-xl shadow-lg w-48">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-brand/20 rounded-full"></div>
+                            <div class="flex-1">
+                                <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="h-3 bg-gray-200 rounded w-full"></div>
+                            <div class="h-3 bg-gray-200 rounded w-5/6"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-float-delay-1 absolute top-1/2 right-1/4 transform translate-x-1/2 -translate-y-1/2">
+                    <div class="bg-white p-4 rounded-xl shadow-lg w-48">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-brand/20 rounded-full"></div>
+                            <div class="flex-1">
+                                <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="h-3 bg-gray-200 rounded w-full"></div>
+                            <div class="h-3 bg-gray-200 rounded w-5/6"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主要內容 -->
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://i.pravatar.cc/150?img=47" alt="陳怡君" class="w-32 h-32 rounded-full object-cover">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-3">陳怡君</h3>
+                        <div class="flex gap-3 mb-4">
+                            <span class="bg-brand/10 text-brand px-4 py-1 rounded-full text-sm">實習</span>
+                            <span class="bg-brand/10 text-brand px-4 py-1 rounded-full text-sm">行銷</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">探索怡君的專業技能，發掘相關產業機會</p>
+                        <button class="bg-brand text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-colors">
+                            查看檔案
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特色 -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">TalenTag 如何運作</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">上傳履歷</h3>
+                    <p class="text-gray-600">只需上傳您的履歷，讓我們的 AI 分析您的技能和經驗。</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">智能配對</h3>
+                    <p class="text-gray-600">我們的 AI 會為您匹配最適合的實習機會。</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">自信申請</h3>
+                    <p class="text-gray-600">申請最適合您技能和潛力的職位。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常見問題 -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">常見問題</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-2">TalenTag 如何運作？</h3>
+                    <p class="text-gray-600">我們的 AI 會分析您的履歷，識別關鍵技能和經驗，然後為您匹配最適合的實習機會。</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-2">TalenTag 是免費的嗎？</h3>
+                    <p class="text-gray-600">是的！在測試階段，TalenTag 對所有學生完全免費。</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-2">配對的準確度如何？</h3>
+                    <p class="text-gray-600">我們的 AI 經過數千個成功實習案例的訓練，能根據您的獨特技能和經驗提供高度準確的配對。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 測試計劃 -->
+    <section id="join-beta" class="py-20 bg-brand">
+        <div class="container mx-auto px-6 text-center text-white">
+            <h2 class="text-3xl font-bold mb-6">加入測試計劃</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">成為首批體驗實習配對新未來的用戶，幫助塑造平台的發展。</p>
+            <form class="flex gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="輸入您的電子郵件" class="flex-1 px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                <button type="submit" class="bg-white text-brand px-8 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
+                    立即加入
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p>© 2024 TalenTag. 版權所有</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand transition-colors">隱私政策</a>
+                    <a href="#" class="hover:text-brand transition-colors">服務條款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

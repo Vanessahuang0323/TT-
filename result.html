@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>您的分析結果 - TalenTag</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': '#32ADE6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-600 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center">
+                    <svg class="h-8 w-8 text-brand" viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M256 32L448 144V368L256 480L64 368V144L256 32Z"/>
+                        <path d="M192 280L256 344L384 216" stroke="white" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="text-2xl font-bold text-gray-800 ml-2">TalenTag</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Header -->
+        <div class="text-center mb-12 animate-fade-in">
+            <div class="inline-flex items-center justify-center gap-2 mb-6">
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <h1 class="text-4xl font-bold text-gray-800">分析完成！</h1>
+            </div>
+            <p class="text-xl text-gray-600">我們找到了一些與您技能相符的理想機會</p>
+        </div>
+
+        <!-- Profile Summary -->
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 mb-12 animate-fade-in delay-200">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-32 h-32 bg-brand/10 rounded-full flex items-center justify-center">
+                    <svg class="w-16 h-16 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold mb-4">您的專業檔案</h2>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-brand/10 text-brand px-4 py-1 rounded-full text-sm">UI/UX 設計</span>
+                        <span class="bg-brand/10 text-brand px-4 py-1 rounded-full text-sm">Figma</span>
+                        <span class="bg-brand/10 text-brand px-4 py-1 rounded-full text-sm">使用者研究</span>
+                        <span class="bg-brand/10 text-brand px-4 py-1 rounded-full text-sm">原型設計</span>
+                        <span class="bg-brand/10 text-brand px-4 py-1 rounded-full text-sm">設計系統</span>
+                    </div>
+                    <p class="text-gray-600">根據我們的分析，您在設計思維和以用戶為中心的方法上有很強的基礎。您對現代設計工具和方法論的經驗使您非常適合創新科技公司。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Match Score -->
+        <div class="max-w-4xl mx-auto mb-12 animate-fade-in delay-400">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-2">您的匹配分數</h2>
+                        <p class="text-gray-600">您的技能與當前市場需求的匹配程度</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 h-24 rounded-full border-8 border-brand flex items-center justify-center">
+                            <span class="text-3xl font-bold text-brand">95%</span>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <div class="font-semibold text-gray-800 mb-1">優秀匹配</div>
+                            前 5% 的候選人
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job Recommendations -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 animate-fade-in delay-400">推薦機會</h2>
+        <div class="grid md:grid-cols-3 gap-6 mb-12 animate-fade-in delay-400">
+            <!-- Job Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-4">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google" class="w-12 h-12 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-semibold">UX 設計實習生</h3>
+                        <p class="text-gray-600">Google</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">98% 匹配</span>
+                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">舊金山</span>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">加入我們的團隊，為 Google 最具創新性的產品設計下一代用戶體驗。</p>
+                <button class="w-full bg-brand text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors">
+                    立即申請
+                </button>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-4">
+                    <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" class="w-12 h-12 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-semibold">產品設計實習生</h3>
+                        <p class="text-gray-600">Microsoft</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">95% 匹配</span>
+                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">西雅圖</span>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">幫助塑造 Microsoft 的設計系統和產品體驗的未來。</p>
+                <button class="w-full bg-brand text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors">
+                    立即申請
+                </button>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-4">
+                    <img src="https://logo.clearbit.com/apple.com" alt="Apple" class="w-12 h-12 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-semibold">UI 設計實習生</h3>
+                        <p class="text-gray-600">Apple</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">92% 匹配</span>
+                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">庫比蒂諾</span>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">為 Apple 下一代產品創造美觀且直觀的界面。</p>
+                <button class="w-full bg-brand text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors">
+                    立即申請
+                </button>
+            </div>
+        </div>
+
+        <!-- Beta Program -->
+        <div class="max-w-2xl mx-auto text-center bg-white rounded-xl shadow-lg p-8 animate-fade-in delay-600">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">想要搶先體驗？</h2>
+            <p class="text-gray-600 mb-6">加入我們的測試計劃，獲取獨家功能並幫助塑造 TalenTag 的未來</p>
+            <form class="flex gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="輸入您的電子郵件" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-brand">
+                <button type="submit" class="bg-brand text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-colors">
+                    加入測試
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // 頁面載入時觸發彩花動畫
+        window.onload = function() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#32ADE6', '#ffffff', '#4CAF50']
+            });
+        }
+    </script>
+</body>
+</html> 

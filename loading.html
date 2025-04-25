@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析履歷中 - TalenTag</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': '#32ADE6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        .animate-bounce-slow {
+            animation: bounce 1.5s infinite;
+        }
+        .progress-bar {
+            animation: progress 3s linear forwards;
+        }
+        .dot-animation::after {
+            content: '...';
+            animation: dots 2s infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40%, 60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="text-center max-w-xl mx-auto">
+        <!-- Logo -->
+        <div class="mb-8">
+            <svg class="w-16 h-16 mx-auto text-brand" viewBox="0 0 512 512" fill="currentColor">
+                <path d="M256 32L448 144V368L256 480L64 368V144L256 32Z"/>
+                <path d="M192 280L256 344L384 216" stroke="white" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Loading Animation -->
+        <div class="mb-8">
+            <svg class="animate-spin mx-auto w-12 h-12 text-brand" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+
+        <!-- Loading Message -->
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">正在分析您的履歷</h1>
+        <p class="text-gray-600 mb-8 dot-animation">這只需要幾秒鐘的時間</p>
+
+        <!-- Progress Bar -->
+        <div class="w-full max-w-md mx-auto bg-gray-200 rounded-full h-2 mb-8">
+            <div class="progress-bar bg-brand h-2 rounded-full"></div>
+        </div>
+
+        <!-- Skills Being Analyzed -->
+        <div class="space-y-2">
+            <div class="animate-bounce-slow">
+                <span class="inline-block bg-brand/10 text-brand px-3 py-1 rounded-full text-sm">分析技能中</span>
+            </div>
+            <div class="animate-bounce-slow" style="animation-delay: 0.2s;">
+                <span class="inline-block bg-brand/10 text-brand px-3 py-1 rounded-full text-sm">匹配機會中</span>
+            </div>
+            <div class="animate-bounce-slow" style="animation-delay: 0.4s;">
+                <span class="inline-block bg-brand/10 text-brand px-3 py-1 rounded-full text-sm">生成見解中</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 3秒後跳轉到結果頁面
+        setTimeout(() => {
+            window.location.href = 'result.html';
+        }, 3000);
+    </script>
+</body>
+</html> 
